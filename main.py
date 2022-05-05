@@ -78,11 +78,4 @@ ens.fit(X_train_augmented, y_train_augmented, validation_data=(X_val_augmented, 
        callbacks = [tf.keras.callbacks.EarlyStopping(patience = 10, restore_best_weights=True, monitor = 'val_mean_loss')],
        epochs = 10000)
 
-
-test = pd.read_csv('../mnist/test.csv')
-
-
-test = np.reshape(np.array(test), (-1, 28,28,1))
-
-
 pred = ens.predict(test)
